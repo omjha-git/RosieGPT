@@ -1,0 +1,185 @@
+.chatWindow {
+  flex: 1;
+  height: 100vh;
+  background: linear-gradient(135deg, #fff4fb, #fbeaff);
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  height: 80px;
+  padding: 0 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ff4fa3;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.logoText {
+  color: #ff4fa3;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.themeToggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff4fa3;
+  cursor: pointer;
+  font-size: 18px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.themeToggle:hover {
+  transform: scale(1.1);
+}
+
+.profileSection {
+  position: relative;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.userAvatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7eb3, #ff4fa3);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.userName {
+  color: #ff4fa3;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  width: 230px;
+  background: white;
+  border: 2px solid #ffb3dc;
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(255, 79, 163, 0.2);
+  z-index: 999;
+}
+
+.dropdownMenu p {
+  color: #7a3d63;
+  font-size: 14px;
+  margin-bottom: 12px;
+  word-break: break-word;
+}
+
+.dropdownMenu button {
+  width: 100%;
+  border: none;
+  background: linear-gradient(135deg, #ff7eb3, #ff4fa3);
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.chat {
+  flex: 1;
+  padding: 30px 80px;
+  overflow-y: auto;
+}
+
+.chatInput {
+  padding: 20px 80px 25px;
+}
+
+.inputBox {
+  max-width: 950px;
+  margin: 0 auto;
+  background: white;
+  border: 2px solid #ff9bd0;
+  border-radius: 35px;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 10px 30px rgba(255, 79, 163, 0.18);
+}
+
+.inputBox input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 18px;
+  color: #4a2540;
+}
+
+#submit {
+  color: #ff4fa3;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.info {
+  text-align: center;
+  margin-top: 12px;
+  color: #9b5c84;
+  font-size: 14px;
+}
+
+.loaderDiv {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.micIcon {
+  color: #ff4fa3;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.activeMic {
+  color: red;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

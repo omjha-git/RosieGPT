@@ -1,0 +1,75 @@
+.chat {
+  flex: 1;
+  padding: 30px 80px;
+  overflow-y: auto;
+}
+
+.welcome {
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 40px;
+}
+
+.welcome h1 {
+  font-size: 64px;
+  color: #ff4fa3;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  color: #9b5c84;
+  font-size: 22px;
+}
+
+.chats {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.userDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gptDiv {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.userMessage {
+  background: linear-gradient(135deg, #ff7eb3, #ff4fa3);
+  color: white;
+  padding: 16px 22px;
+  border-radius: 25px 25px 8px 25px;
+  max-width: 72%;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.gptMessage {
+  background: white;
+  color: #4a2540;
+  padding: 18px 22px;
+  border-radius: 25px 25px 25px 8px;
+  max-width: 75%;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+.gptMessage pre {
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 14px;
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.gptMessage code {
+  font-size: 14px;
+}

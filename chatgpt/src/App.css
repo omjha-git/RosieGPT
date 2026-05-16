@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #fff4fb;
+}
+
+.app.dark {
+  background: #171717;
+}
+
+.app.dark .chatWindow {
+  background: #212121;
+}
+
+.app.dark .navbar {
+  color: #ff8acb;
+}
+
+.app.dark .welcome h1 {
+  color: #ff8acb;
+}
+
+.app.dark .welcome p,
+.app.dark .info {
+  color: #d6b6cc;
+}
+
+.app.dark .inputBox,
+.app.dark .gptMessage,
+.app.dark .dropdownMenu {
+  background: #2f2f2f;
+  color: white;
+}
+
+.app.dark .inputBox input {
+  color: white;
+}
+
+.app.dark .dropdownMenu p {
+  color: #ffb3dc;
+}

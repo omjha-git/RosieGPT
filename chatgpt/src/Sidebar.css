@@ -1,0 +1,84 @@
+.sidebar {
+  width: 330px;
+  height: 100vh;
+  background: linear-gradient(180deg, #ff80c5, #ffb3dc, #c9a7ff);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.newChatBtn {
+  width: 100%;
+  background: white;
+  color: #ff4fa3;
+  border: none;
+  border-radius: 18px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.logo {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.history {
+  list-style: none;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.history li {
+  background: rgba(255, 255, 255, 0.35);
+  margin-bottom: 12px;
+  padding: 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history li span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.history li:hover {
+  background: white;
+  color: #ff4fa3;
+}
+
+.activeThread {
+  background: white !important;
+  color: #ff4fa3 !important;
+}
+
+.deleteIcon {
+  opacity: 0;
+  color: #ff4fa3;
+  transition: 0.2s;
+}
+
+.history li:hover .deleteIcon {
+  opacity: 1;
+}
+
+.deleteIcon:hover {
+  color: red;
+}
+
+.sign {
+  text-align: center;
+  padding: 15px;
+  font-weight: 700;
+}
