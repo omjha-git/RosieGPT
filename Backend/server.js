@@ -14,6 +14,9 @@ app.use(cors());
 
 app.use("/api", chatRoutes);
 app.use("/api/auth", authRoutes);
+app.get("/", (req, res) => {
+  res.send("RosieGPT backend is running 🌸");
+});
 
 const connectDB = async () => {
   try {
