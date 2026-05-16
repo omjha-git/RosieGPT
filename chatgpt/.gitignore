@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.env
+Backend/.env
+chatgpt/.env
+
+Backend/node_modules
+chatgpt/node_modules
