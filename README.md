@@ -72,19 +72,7 @@ The project features secure authentication, persistent chat history, voice input
 
 ---
 
-# 📸 Screenshots
 
-## Login Page
-
-Add screenshot here.
-
-## Chat Interface
-
-Add screenshot here.
-
-## Dark Mode
-
-Add screenshot here.
 
 ---
 
