@@ -10,7 +10,7 @@ const getOpenAIResponse = async (message) => {
       "X-Title": "RosieGPT",
     },
     body: JSON.stringify({
-      model: "meta-llama/llama-3.3-8b-instruct:free",
+      model: "mistralai/mistral-7b-instruct:free",
       messages: [
         {
           role: "user",
