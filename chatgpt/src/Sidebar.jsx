@@ -4,7 +4,7 @@ import cuteAnimal from "./assets/cute.webp.webp";
 import { useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { MyContext } from "./MyContext.jsx";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function Sidebar() {
   const {
     currThreadId,
@@ -19,7 +19,7 @@ function Sidebar() {
 
   const getAllThreads = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/thread");
+      const response = await fetch(`${API_URL}/api/thread`);
       const data = await response.json();
       setThreads(data);
     } catch (err) {
@@ -37,7 +37,7 @@ function Sidebar() {
 
   const openThread = async (threadId) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/thread/${threadId}`);
+      const response = await fetch(`${API_URL}/api/thread/${threadId}`);
       const data = await response.json();
 
       setCurrThreadId(threadId);
@@ -54,7 +54,7 @@ function Sidebar() {
     e.stopPropagation();
 
     try {
-      await fetch(`http://localhost:8080/api/thread/${threadId}`, {
+      await fetch(`${API_URL}/api/thread/${threadId}`, {
         method: "DELETE",
       });
 

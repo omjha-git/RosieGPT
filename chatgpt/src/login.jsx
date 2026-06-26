@@ -9,6 +9,7 @@ function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleAuth = async () => {
     if (isSignup && !name.trim()) {
@@ -22,8 +23,8 @@ function Login() {
     }
 
     const url = isSignup
-      ? "http://localhost:8080/api/auth/signup"
-      : "http://localhost:8080/api/auth/login";
+  ? `${API_URL}/api/auth/signup`
+  : `${API_URL}/api/auth/login`;
 
     const body = isSignup
       ? { name, email, password }

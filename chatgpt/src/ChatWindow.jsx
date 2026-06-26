@@ -4,6 +4,8 @@ import Chat from "./Chat.jsx";
 import { MyContext } from "./MyContext.jsx";
 import { useContext, useState } from "react";
 import { ScaleLoader } from "react-spinners";
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 function ChatWindow() {
   const {
@@ -66,7 +68,7 @@ function ChatWindow() {
     setPrompt("");
 
     try {
-      const response = await fetch("http://localhost:8080/api/chat", {
+      const response = await fetch(`${API_URL}/api/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
