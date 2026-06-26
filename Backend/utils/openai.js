@@ -1,18 +1,16 @@
 import "dotenv/config";
 
 const getOpenAIResponse = async (message) => {
-
-  const options = {
+  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
-
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      "HTTP-Referer": "https://rosie-gpt.vercel.app",
+      "X-Title": "RosieGPT",
     },
-
     body: JSON.stringify({
       model: "meta-llama/llama-3.3-8b-instruct:free",
-
       messages: [
         {
           role: "user",
@@ -20,29 +18,23 @@ const getOpenAIResponse = async (message) => {
         },
       ],
     }),
-  };
+  });
 
-  try {
+  const data = await response.json();
 
-    const response = await fetch(
-      "https://openrouter.ai/api/v1/chat/completions",
-      options
-    );
+  console.log("OpenRouter response:", JSON.stringify(data));
 
-   const data = await response.json();
-
-if (!response.ok) {
-  console.error("OpenRouter Error:", data);
-  throw new Error(data.error?.message || "OpenRouter request failed");
-}
-
-return data.choices[0].message.content;
-
-  } catch (err) {
-
-    console.log(err);
-
+  if (!response.ok) {
+    throw new Error(data.error?.message || "OpenRouter failed");
   }
+
+  const reply = data?.choices?.[0]?.message?.content;
+
+  if (!reply) {
+    throw new Error("No reply content received from OpenRouter");
+  }
+
+  return reply;
 };
 
 export default getOpenAIResponse;
