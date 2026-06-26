@@ -7,11 +7,11 @@ const getOpenAIResponse = async (message) => {
 
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`,
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
     },
 
     body: JSON.stringify({
-      model: "openrouter/free",
+      model: "meta-llama/llama-3.3-8b-instruct:free",
 
       messages: [
         {
@@ -29,9 +29,14 @@ const getOpenAIResponse = async (message) => {
       options
     );
 
-    const data = await response.json();
+   const data = await response.json();
 
-    return data.choices[0].message.content;
+if (!response.ok) {
+  console.error("OpenRouter Error:", data);
+  throw new Error(data.error?.message || "OpenRouter request failed");
+}
+
+return data.choices[0].message.content;
 
   } catch (err) {
 
