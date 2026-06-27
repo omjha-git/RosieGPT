@@ -10,7 +10,7 @@ const getOpenAIResponse = async (message) => {
       "X-Title": "RosieGPT",
     },
     body: JSON.stringify({
-      model: "deepseek/deepseek-chat-v3-0324:free",
+      model: "cohere/north-mini-code:free",
       messages: [
         {
           role: "user",
