@@ -27,3 +27,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build Docker image
+        run: docker build -t devopsmate-app .
+
