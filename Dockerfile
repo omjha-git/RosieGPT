@@ -2,12 +2,12 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-COPY Backend/package*.json ./
+COPY package*.json ./
 
 RUN npm ci --omit=dev
 
-COPY Backend/ ./
+COPY . .
 
 EXPOSE 5000
 
-CMD ["node", "server.js"]
+CMD ["node","server.js"]
